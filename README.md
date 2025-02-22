@@ -37,10 +37,8 @@
 ## 安装
 
 1. **克隆项目到本地**：
-   ```bash
    git clone https://github.com/your-username/cyber-study-desk.git
-   ```
-   如果克隆失败，请检查链接的合法性或稍后重试。
+如果克隆失败，请检查链接的合法性或稍后重试。
 启动应用：
 打开 index.html 文件以启动应用：
 bash
