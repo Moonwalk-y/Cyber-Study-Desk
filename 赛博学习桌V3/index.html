@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赛博学习桌</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div id="main-container">
+        <h1 id="title">赛博学习桌</h1>
+        <div id="remaining-time-display" style="position: fixed; top: 20px; right: 20px; cursor: move;">
+            剩余可用时长：<span id="remaining-time-value">0</span> 分钟
+        </div>
+        <div id="pomodoro-timer">
+            <span id="timer-display">25:00</span>
+            <button id="pomodoro-button">开始</button>
+            <button id="reset-button">重置</button>
+        </div>
+        <div id="button-container">
+            <div id="url-bar"><button id="add-url-button">网址栏</button></div>
+            <div id="background-settings">
+                <input type="file" id="background-upload" accept="image/*" style="display: none;">
+                <button id="change-background-button">更换桌布</button>
+            </div>
+            <div id="data-statistics">
+                <button id="data-statistics-button">数据统计</button>
+            </div>
+        </div>
+        <div id="fullscreen-prompt">
+            <p>按 F11 键开启全屏模式</p>
+            <button id="confirm-button">确定</button>
+        </div>
+    </div>
+
+    <!-- 任务栏 -->
+    <div id="taskbar">
+        <button id="collapse-button"></button>
+        <div id="taskbar-top">
+            <h2>任务栏</h2>
+            <div id="available-time-container">
+                <label for="available-time">请输入这一天的可用时长（分钟）</label>
+                <input type="number" id="available-time" placeholder="可用时长（分钟）">
+                <p id="remaining-time" style="display: none;">剩余可用时长：<span id="remaining-time-value"></span> 分钟</p>
+            </div>
+            <div id="task-input-container">
+                <input type="text" id="task-input" placeholder="输入任务...">
+                <div style="display: flex; align-items: center; width: 100%;">
+                    <input type="number" id="task-time" placeholder="所需时间（分钟）" style="flex: 1;">
+                    <span id="remaining-time-display" style="margin-left: 10px; display: none;">剩余可用时长：<span id="remaining-time-value"></span> 分钟</span>
+                </div>
+                <button id="add-task-button">添加任务</button>
+                <p id="task-warning">请留出60分钟的时间以确保能够完成任务。</p>
+            </div>
+            <div id="task-list-container">
+                <ul id="task-list"></ul>
+            </div>
+        </div>
+        <div id="taskbar-bottom">
+            <!-- 移除了添加任务和查看任务按钮 -->
+        </div>
+    </div>
+
+    <!-- 数据统计边栏 -->
+    <div id="statistics-sidebar">
+        <button id="statistics-collapse-button"></button>
+        <div id="statistics-content">
+            <h2>数据统计</h2>
+            <div id="time-statistics">
+                <p>总可用时长：<span id="total-available-time">0</span> 分钟</p>
+                <p>剩余时长：<span id="remaining-time-stats">0</span> 分钟</p>
+                <p>已完成任务数量: <span id="completed-tasks-count">0</span></p>
+            </div>
+            <div id="pie-chart-container">
+                <canvas id="time-distribution-chart"></canvas>
+            </div>
+            <div id="completed-tasks-container">
+                <h3>已完成的任务：</h3>
+                <ul id="completed-tasks-list"></ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 添加网址的弹出窗口 -->
+    <div id="url-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>添加常用网址</h2>
+            <input type="text" id="url-input" placeholder="输入网址...">
+            <input type="text" id="shortcut-input" placeholder="设置快捷方式...">
+            <button id="save-url-button">保存网址</button>
+            <ul id="url-list"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="db.js"></script>
+</body>
+</html> 
