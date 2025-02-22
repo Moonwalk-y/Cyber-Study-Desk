@@ -38,20 +38,16 @@
 
 1. **克隆项目到本地**：
    git clone https://github.com/your-username/cyber-study-desk.git
-如果克隆失败，请检查链接的合法性或稍后重试。
-启动应用：
-打开 index.html 文件以启动应用：
-bash
-复制
-open index.html
-或者通过浏览器直接访问。
-技术栈
-HTML5
-CSS3
-JavaScript (ES6+)
-Chart.js (用于数据可视化)
-LocalStorage (用于数据存储)
-贡献
+   
+- 如果克隆失败，请检查链接的合法性或稍后重试。
+### 启动应用：
+- 打开 index.html 文件以启动应用：open index.html
+- 或者通过浏览器直接访问。
+### 技术栈
+- HTML5
+- CSS3
+- JavaScript (ES6+)
+- Chart.js (用于数据可视化)
+- LocalStorage (用于数据存储)
+### 贡献
 如果你有任何建议或改进，可以提起 Issue 或者直接提交 Pull Request。
-许可
-本项目采用 MIT 许可证，详情请参阅 LICENSE 文件。
